@@ -75,7 +75,7 @@ header nav a:hover {
 .hoverable {
     font-size: 1.70rem;
     cursor: pointer;
-    margin: .7rem;
+    padding: .7rem;
     font-family: 'Alegreya SC', serif;
 
 }
