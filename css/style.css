@@ -17,6 +17,8 @@ body {
     justify-content: center;
     background: #9ED7AB;
     background: linear-gradient(135deg, #9ED7AB, #406E86);
+
+    overflow: hidden;
 }
 
 header nav {
