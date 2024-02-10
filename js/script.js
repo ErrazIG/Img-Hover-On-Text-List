@@ -26,7 +26,7 @@
 //         });
 //     });
 // });
-
+const arrayAudio = document.querySelectorAll('.audio');
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -45,12 +45,31 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    var audioActuel = null;
+
+    // Ajout d'un écouteur d'événement pour chaque texte
+    hoverables.forEach(function (item, index) {
+        item.addEventListener('mouseover', function () {
+            // Si un audio était en cours de lecture, l'arrêter
+            if (audioActuel !== null) {
+                audioActuel.pause();
+                audioActuel.currentTime = 0;
+            }
+            // Démarrer la lecture de l'audio correspondant à l'index actuel
+            audioActuel = arrayAudio[index];
+            audioActuel.play();
+        });
+        item.addEventListener('mouseout', function () {
+            audioActuel.pause();
+            audioActuel.currentTime = 0;
+        })
+    });
+
     hoverables.forEach(function (hoverable, index) {
         hoverable.addEventListener('mouseover', function () {
             // Afficher l'image correspondante avec une animation de fondu
             tooltips[index].style.display = 'block';
         });
-
         hoverable.addEventListener('mouseout', function () {
             // Cacher l'image avec une animation de fondu lorsque le curseur quitte le texte
             setTimeout(() => {
