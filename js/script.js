@@ -45,25 +45,25 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    var audioActuel = null;
+    // var audioActuel = null;
 
     // Ajout d'un écouteur d'événement pour chaque texte
-    hoverables.forEach(function (item, index) {
-        item.addEventListener('mouseover', function () {
-            // Si un audio était en cours de lecture, l'arrêter
-            if (audioActuel !== null) {
-                audioActuel.pause();
-                audioActuel.currentTime = 0;
-            }
-            // Démarrer la lecture de l'audio correspondant à l'index actuel
-            audioActuel = arrayAudio[index];
-            audioActuel.play();
-        });
-        item.addEventListener('mouseout', function () {
-            audioActuel.pause();
-            audioActuel.currentTime = 0;
-        })
-    });
+    // hoverables.forEach(function (item, index) {
+    //     item.addEventListener('mouseover', function () {
+    //         // Si un audio était en cours de lecture, l'arrêter
+    //         if (audioActuel !== null) {
+    //             audioActuel.pause();
+    //             audioActuel.currentTime = 0;
+    //         }
+    //         // Démarrer la lecture de l'audio correspondant à l'index actuel
+    //         audioActuel = arrayAudio[index];
+    //         audioActuel.play();
+    //     });
+    //     item.addEventListener('mouseout', function () {
+    //         audioActuel.pause();
+    //         audioActuel.currentTime = 0;
+    //     })
+    // });
 
     hoverables.forEach(function (hoverable, index) {
         hoverable.addEventListener('mouseover', function () {
